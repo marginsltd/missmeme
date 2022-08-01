@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #444;
+}
+@font-face {
+  font-family: "mm1";
+  src: url("../type/mm1.woff2") format("woff2"), url("type/mm1.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "mm2";
+  src: url("../type/mm2.woff2") format("woff2"), url("type/mm2.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.char {
+  position: relative;
+}
+.char img {
+  width: 100%;
+}

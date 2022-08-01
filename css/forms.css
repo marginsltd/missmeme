@@ -1,0 +1,69 @@
+input.inline,
+textarea.inline {
+  font-family: "mm1";
+  font-size: 50px;
+  line-height: 50px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 10px;
+  border: none;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+input.inline{
+  height: 45px;
+}
+
+@media (max-width: 610px){
+  input.inline,
+  textarea.inline {
+    font-family: "mm1";
+    font-size: 38px;
+    line-height: 40px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 10px;
+    border: none;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  input.inline{
+    height: 40px;
+    margin: 0 0 5px 0;
+  }
+}
+
+
+textarea.inline {
+  resize: none;
+  overflow: hidden;
+}
+
+:focus {
+  border: none;
+  outline: none;
+}
+
+.download{
+  font-family: "mm1";
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  text-align: center;
+  background: green;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.credit{
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  opacity: 0.4;
+  width: 30px;
+}

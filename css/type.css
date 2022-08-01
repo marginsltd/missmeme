@@ -1,0 +1,35 @@
+h1{
+  font-family: "mm1";
+  font-size: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h2{
+  font-family: "mm1";
+  font-size: 50px;
+  line-height: 55px;
+}
+
+small{
+  font-family: helvetica, arial, sans-serif;
+}
+
+.byline {
+  font-family: "mm2";
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  margin: 10px auto;
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 610px){
+  .byline{
+    font-size: 14px;
+    letter-spacing: 0.08em;
+  }
+}
+
