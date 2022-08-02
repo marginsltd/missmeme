@@ -31,8 +31,8 @@
 <div class="book flex" id="capture">
   <section class="row-1 flex-inner">
     <div>
-      <input class="inline" placeholder="" value="Little Miss"/ style="display: none;">
-      <textarea class="inline" placeholder="" id="statement" name="statement" rows="2" cols="12" style="display: none;"></textarea>
+      <input class="inline main_input" placeholder="" value="Little Miss"/ style="display: none;">
+      <textarea class="inline second_text" placeholder="" id="statement" name="statement" rows="2" cols="12" style="display: none;"></textarea>
       <div class="texted_data" style="display:none;"></div>
     </div>
   </section>
@@ -99,8 +99,15 @@
   setUpDownloadPageAsImage();
 
   function setUpDownloadPageAsImage() {
-    window.scrollTo(0,0)
     document.getElementById("donwload").addEventListener("click", function() {
+    main_input = $(".main_input").val();
+    second_text = $(".second_text").val();
+    $(".texted_data").html(main_input+"<br>"+second_text);
+    $(".texted_data").fadeIn();
+
+    window.scrollTo(0,0)
+
+
       html2canvas(document.querySelector("#capture"),{scrollY: -window.scrollY}).then(function(canvas) {
         console.log(canvas);
         $(".can").append(canvas);
