@@ -76,35 +76,19 @@
 <script src='lib/slick.min.js'></script>
 <script src='lib/TweenMax.min.js'></script>
 <script src='lib/TextPlugin.min.js'></script>
-<script src='lib/html2canvas.js'></script>
+<!-- <script src='lib/html2canvas.js'></script> -->
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
 <script src="js/missmeme.js"></script>
 <script>
   $("#donwload").click(function() {
-    html2canvas($("#capture"), {
-      onrendered: function(canvas) {
-        saveAs(canvas.toDataURL(), 'canvas.png');
-      }
-    });
+   html2canvas(document.querySelector("#capture")).then(canvas => {
+           canvas.toBlob(function(blob) {
+             window.saveAs(blob, 'my_image.jpg');
+           });
+           });
   });
 
-  function saveAs(uri, filename) {
-    var link = document.createElement('a');
-    if (typeof link.download === 'string') {
-      link.href = uri;
-      link.download = filename;
-
-      //Firefox requires the link to be in the body
-      document.body.appendChild(link);
-
-      //simulate click
-      link.click();
-
-      //remove the link when done
-      document.body.removeChild(link);
-    } else {
-      window.open(uri);
-    }
-  }
 </script>
 
 
