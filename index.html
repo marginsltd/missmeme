@@ -99,7 +99,7 @@
 
   function setUpDownloadPageAsImage() {
     document.getElementById("donwload").addEventListener("click", function() {
-      html2canvas($("#capture")).then(function(canvas) {
+      html2canvas(document.querySelector("#capture")).then(function(canvas) {
         console.log(canvas);
         simulateDownloadImageClick(canvas.toDataURL(), 'file-name.png');
       });
