@@ -71,7 +71,7 @@
 </div>
 <div class="download_btn" style="margin-bottom: 20px;"><button id="donwload">Save Image</button></div>
 
-
+<div class="can"></div>
 
 <script src='lib/jquery.min.js'></script>
 <script src='lib/slick.min.js'></script>
@@ -103,6 +103,7 @@
     document.getElementById("donwload").addEventListener("click", function() {
       html2canvas(document.querySelector("#capture"),{scrollY: -window.scrollY}).then(function(canvas) {
         console.log(canvas);
+        $(".can").append(canvas);
         simulateDownloadImageClick(canvas.toDataURL(), 'file-name.png');
       });
     });
