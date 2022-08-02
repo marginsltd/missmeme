@@ -33,6 +33,7 @@
     <div>
       <input class="inline" placeholder="" value="Little Miss"/ style="display: none;">
       <textarea class="inline" placeholder="" id="statement" name="statement" rows="2" cols="12" style="display: none;"></textarea>
+      <div class="texted_data" style="display:none;"></div>
     </div>
   </section>
   <section class="row-2">
@@ -98,8 +99,9 @@
   setUpDownloadPageAsImage();
 
   function setUpDownloadPageAsImage() {
+    window.scrollTo(0,0)
     document.getElementById("donwload").addEventListener("click", function() {
-      html2canvas(document.querySelector("#capture")).then(function(canvas) {
+      html2canvas(document.querySelector("#capture"),{scrollY: -window.scrollY}).then(function(canvas) {
         console.log(canvas);
         simulateDownloadImageClick(canvas.toDataURL(), 'file-name.png');
       });
