@@ -109,13 +109,15 @@
     window.scrollTo(0,0)
 
 
-      html2canvas(document.querySelector("#capture"),{scrollY: -window.scrollY}).then(function(canvas) {
-        console.log(canvas);
-        $(".can").append(canvas);
-        simulateDownloadImageClick(canvas.toDataURL(), 'file-name.png');
-        $(".texted_data").fadeOut();
-        $(".main_input,.second_text").fadeIn();
-      });
+      setTimeout(function () {
+        html2canvas(document.querySelector("#capture"),{scrollY: -window.scrollY}).then(function(canvas) {
+          console.log(canvas);
+          $(".can").append(canvas);
+          simulateDownloadImageClick(canvas.toDataURL(), 'file-name.png');
+          $(".texted_data").fadeOut();
+          $(".main_input,.second_text").fadeIn();
+        });
+      },1000)
     });
   }
 
