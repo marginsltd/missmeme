@@ -10,7 +10,7 @@ textarea.inline,
   border: none;
   text-transform: uppercase;
   text-align: center;
-  display: block !important;
+  /*display: block !important;*/
 }
 
 input.inline{

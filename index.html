@@ -31,8 +31,8 @@
 <div class="book flex" id="capture">
   <section class="row-1 flex-inner">
     <div>
-      <input class="inline main_input" placeholder="" value="Little Miss"/ style="display: none;">
-      <textarea class="inline second_text" placeholder="" id="statement" name="statement" rows="2" cols="12" style="display: none;"></textarea>
+      <input class="inline main_input" placeholder="" value="Little Miss"/ >
+      <textarea class="inline second_text" placeholder="" id="statement" name="statement" rows="2" cols="12" ></textarea>
       <div class="texted_data" style="display:none;"></div>
     </div>
   </section>
@@ -104,6 +104,7 @@
     second_text = $(".second_text").val();
     $(".texted_data").html(main_input+"<br>"+second_text);
     $(".texted_data").fadeIn();
+    $(".main_input,.second_text").fadeOut();
 
     window.scrollTo(0,0)
 
@@ -112,6 +113,8 @@
         console.log(canvas);
         $(".can").append(canvas);
         simulateDownloadImageClick(canvas.toDataURL(), 'file-name.png');
+        $(".texted_data").fadeOut();
+        $(".main_input,.second_text").fadeIn();
       });
     });
   }
