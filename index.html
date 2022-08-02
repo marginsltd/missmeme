@@ -81,13 +81,56 @@
    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
 <script src="js/missmeme.js"></script>
 <script>
-  $("#donwload").click(function() {
-   html2canvas(document.querySelector("#capture")).then(canvas => {
-           canvas.toBlob(function(blob) {
-             window.saveAs(blob, 'my_image.jpg');
-           });
-           });
-  });
+  // $("#donwload").click(function() {
+  //  html2canvas(document.querySelector("#capture")).then(canvas => {
+  //          canvas.toBlob(function(blob) {
+  //            window.saveAs(blob, 'my_image.jpg');
+  //          });
+  //          });
+  // });
+
+
+
+
+
+
+
+  setUpDownloadPageAsImage();
+
+  function setUpDownloadPageAsImage() {
+    document.getElementById("donwload").addEventListener("click", function() {
+      html2canvas($("#capture")).then(function(canvas) {
+        console.log(canvas);
+        simulateDownloadImageClick(canvas.toDataURL(), 'file-name.png');
+      });
+    });
+  }
+
+  function simulateDownloadImageClick(uri, filename) {
+    var link = document.createElement('a');
+    if (typeof link.download !== 'string') {
+      window.open(uri);
+    } else {
+      link.href = uri;
+      link.download = filename;
+      accountForFirefox(clickLink, link);
+    }
+  }
+
+  function clickLink(link) {
+    link.click();
+  }
+
+  function accountForFirefox(click) { // wrapper function
+    let link = arguments[1];
+    document.body.appendChild(link);
+    click(link);
+    document.body.removeChild(link);
+  }
+
+
+
+
 
 </script>
 
