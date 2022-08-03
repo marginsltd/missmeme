@@ -110,7 +110,11 @@
 
 
       setTimeout(function () {
-        html2canvas(document.querySelector("#capture"),{scrollY: -window.scrollY}).then(function(canvas) {
+        html2canvas(document.querySelector("#capture"),{
+          scrollY: -window.scrollY,
+          allowTaint: true,
+          useCORS : true,
+        }).then(function(canvas) {
           console.log(canvas);
           simulateDownloadImageClick(canvas.toDataURL(), 'file-name.png');
           $(".texted_data").fadeOut();
