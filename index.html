@@ -103,8 +103,8 @@
     main_input = $(".main_input").val();
     second_text = $(".second_text").val();
     $(".texted_data").html(main_input+"<br>"+second_text);
-    $(".texted_data").fadeIn();
-    $(".main_input,.second_text").fadeOut();
+    $(".texted_data").fadeIn(10);
+    $(".main_input,.second_text").fadeOut(10);
 
     window.scrollTo(0,0)
 
@@ -117,8 +117,7 @@
         }).then(function(canvas) {
           console.log(canvas);
           simulateDownloadImageClick(canvas.toDataURL(), 'file-name.png');
-          $(".texted_data").fadeOut();
-          $(".main_input,.second_text").fadeIn();
+          
         });
       },1000)
     });
@@ -128,10 +127,14 @@
     var link = document.createElement('a');
     if (typeof link.download !== 'string') {
       window.open(uri);
+      $(".texted_data").fadeOut(10);
+      $(".main_input,.second_text").fadeIn(10);
     } else {
       link.href = uri;
       link.download = filename;
       accountForFirefox(clickLink, link);
+      $(".texted_data").fadeOut(10);
+      $(".main_input,.second_text").fadeIn(10);
     }
   }
 
