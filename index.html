@@ -2415,7 +2415,7 @@
     second_text = $(".second_text").val();
     $(".texted_data").html(main_input+"<br>"+second_text);
     $(".texted_data").fadeIn();
-    $(".main_input,.second_text").attr("style","visibility: hidden;");
+    $(".main_input,.second_text").fadeOut();
 
     window.scrollTo(0,0)
 
@@ -2429,7 +2429,7 @@
           console.log(canvas);
           simulateDownloadImageClick(canvas.toDataURL(), 'file-name.png');
           $(".texted_data").fadeOut();
-          $(".main_input,.second_text").attr("style","visibility: visibile;");
+          $(".main_input,.second_text").fadeIn();
         });
       },1000)
     });
