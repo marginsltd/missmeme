@@ -12,6 +12,9 @@ textarea.inline,
   text-align: center;
   /*display: block !important;*/
 }
+.texted_data{
+  font-size: 45px !important;
+}
 .svg_img svg{
   width: 100%;
   height: 100%;
